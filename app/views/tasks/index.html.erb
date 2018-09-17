@@ -1,0 +1,16 @@
+<article>
+  <h1>TASKLIST</h1>
+  <section>
+
+    <h3>YOUR TASKS</h3>
+
+    <ol>
+      <% @tasks.each do |task| %>
+        <li>
+          <%= task %>
+        </li>
+      <% end %>
+    </ol>
+
+  </section>
+</article>
