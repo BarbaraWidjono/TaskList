@@ -7,7 +7,9 @@
     <ol>
       <% @tasks.each do |task| %>
         <li>
-          <%= task %>
+          <%= task.action %>
+          <!-- <p>Description: <%= task.description %></p>
+          <p>Date to be completed: <%= task.completion_date %></p> -->
         </li>
       <% end %>
     </ol>

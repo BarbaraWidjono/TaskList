@@ -1,13 +1,13 @@
 class TasksController < ApplicationController
-  TASKS = ["Water chia head", "Pet fuzzy rock", "Hug teddy", "Smell some flowers", "Paint the plates", "Pop water ballon"]
+  # TASKS = ["Water chia head", "Pet fuzzy rock", "Hug teddy", "Smell some flowers", "Paint the plates", "Pop water ballon"]
 
   def index
-    @tasks = TASKS
+    @tasks = Task.all
   end
 
   def show
-    task_id = params[:id].to_i
-    @task = TASKS[task_id]
+    task_id = params[:id]
+    @task = Task.find_by(id: task_id)
 
     if @task.nil?
       head 404
