@@ -1,5 +1,21 @@
 <%= form_with model: @task do |t| %>
+
   <h2>Task Form</h2>
+
   <%= t.label :action %>
   <%= t.text_field :action %>
+  <br>
+
+  <%= t.label :description %>
+  <%= t.text_field :description %>
+  <br>
+
+  <%= t.label :completion_date %>
+  <%= t.date_field(:completion_date) %>
+
+
+  <br>
+
+  <%= t.submit "Submit Task" %>
+
 <% end %>
