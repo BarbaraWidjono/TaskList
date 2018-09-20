@@ -1,8 +1,11 @@
 <article>
   <h2>Task Description</h2>
+
   <section>
   <p>Task: <%= @task.action %></p>
   <p>Description: <%= @task.description %></p>
   <p>Date to Complete: <%= @task.completion_date %></p>
   </section>
+
+  <%= link_to "Update Task", edit_task_path %>
 </article>
