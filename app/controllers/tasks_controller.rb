@@ -13,4 +13,8 @@ class TasksController < ApplicationController
       head 404
     end
   end
+
+  def new
+    @task = Task.new
+  end
 end
