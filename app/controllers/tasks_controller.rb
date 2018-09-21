@@ -19,12 +19,12 @@ class TasksController < ApplicationController
   end
 
   def create
-    # date = Date.new([:)
 
     @task = Task.new(
       action: params[:task][:action],
       description: params[:task][:description],
-      completion_date: params[:task][:completion_date]
+      completion_date: params[:task][:completion_date],
+      completed: false
     )
 
     if @task.save
@@ -37,6 +37,13 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+  end
+
+  def completed
+    @task = Task.find(params[:id])
+
+    @task.update(completed: true)
+    redirect_to root_path
   end
 
   def update
