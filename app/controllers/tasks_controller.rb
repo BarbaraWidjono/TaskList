@@ -40,7 +40,10 @@ class TasksController < ApplicationController
   end
 
   def update
+    @task = Task.find(params[:id])
 
+    @task.update(action: params[:task][:action], description: params[:task][:description], completion_date: params[:task][:completion_date])
+    redirect_to tasks_path(@task)
   end
 
 end
