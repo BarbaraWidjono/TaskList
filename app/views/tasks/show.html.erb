@@ -7,5 +7,6 @@
   <p>Date to Complete: <%= @task.completion_date %></p>
   </section>
 
-  <%= link_to "Update Task", edit_task_path(@task.id) %>
+  <%= link_to "Update Task", edit_task_path(@task.id) %><br>
+  <%= link_to "Back to Task List", tasks_path %>
 </article>
