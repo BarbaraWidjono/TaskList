@@ -9,7 +9,7 @@
         <li>
 
           <% if task.completed %>
-            <%= link_to "finished", task_path(task.id) %><br>
+            <%= link_to task.action, task_path(task.id), :style => "text-decoration: line-through" %><br>
           <% else %>
             <%= link_to task.action, task_path(task.id) %><br>
           <% end %>
