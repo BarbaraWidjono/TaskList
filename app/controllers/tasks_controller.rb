@@ -40,9 +40,10 @@ class TasksController < ApplicationController
   end
 
   def completed
+    today_date = Date.new
     @task = Task.find(params[:id])
 
-    @task.update(completed: true)
+    @task.update(completed: true, date_completed: today_date)
     redirect_to root_path
   end
 
