@@ -7,7 +7,8 @@
     <ol>
       <% @tasks.each do |task| %>
         <li>
-          <%= link_to task.action, task_path(task.id) %>
+          <%= link_to task.action, task_path(task.id) %><br>
+          <%= link_to "Delete", delete_task_path(task.id), data: { confirm: "Are you sure?"} %>
         </li>
       <% end %>
     </ol>
