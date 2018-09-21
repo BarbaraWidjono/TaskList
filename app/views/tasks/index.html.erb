@@ -8,7 +8,7 @@
       <% @tasks.each do |task| %>
         <li>
           <%= link_to task.action, task_path(task.id) %><br>
-          <%= link_to "Delete", task_path(task.id), data: { confirm: "Are you sure you want to delete this task?", method: :delete} %>
+          <%= link_to "Delete", task_path(task.id), data: { confirm: "Are you sure you want to delete this task: #{task.action}?", method: :delete} %>
         </li>
       <% end %>
     </ol>
