@@ -5,8 +5,13 @@
   <p>Task: <%= @task.action %></p>
   <p>Description: <%= @task.description %></p>
   <p>Date to Complete: <%= @task.completion_date %></p>
-  </section>
 
-  <%= link_to "Update Task", edit_task_path(@task.id) %><br>
+  <% if @task.completed %>
+    <p>Date task completed: <%= @task.date_completed %> </p>
+  <% end %>
+
+  </section>
   
+  <%= link_to "Update Task", edit_task_path(@task.id) %><br>
+
 </article>

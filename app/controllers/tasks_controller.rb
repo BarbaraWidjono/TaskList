@@ -1,3 +1,5 @@
+require 'date'
+
 class TasksController < ApplicationController
   # TASKS = ["Water chia head", "Pet fuzzy rock", "Hug teddy", "Smell some flowers", "Paint the plates", "Pop water ballon"]
 
@@ -40,7 +42,7 @@ class TasksController < ApplicationController
   end
 
   def completed
-    today_date = Date.new
+    today_date = Date.today
     @task = Task.find(params[:id])
 
     @task.update(completed: true, date_completed: today_date)
