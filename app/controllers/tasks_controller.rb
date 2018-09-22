@@ -53,7 +53,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     @task.update(action: params[:task][:action], description: params[:task][:description], completion_date: params[:task][:completion_date])
-    redirect_to tasks_path(@task)
+    redirect_to task_path(@task)
   end
 
   def destroy
