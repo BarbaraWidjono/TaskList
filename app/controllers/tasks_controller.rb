@@ -33,6 +33,9 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    if @task.date_completed
+      redirect_to :action => 'index', :alert => "Cannot update a completed task!"
+    end
   end
 
   def completed
