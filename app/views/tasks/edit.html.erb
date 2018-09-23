@@ -1,18 +1,5 @@
-<h2>Edit Task</h2>
-
-<%= form_with model: @task do |t| %>
-
-  <%= t.label :action %>
-  <%= t.text_field :action %>
-  <br>
-
-  <%= t.label :description %>
-  <%= t.text_area :description %>
-  <br>
-
-  <%= t.label :completion_date %>
-  <%= t.date_field :completion_date %>
-  <br>
-
-  <%= t.submit "Update Task" %>
-<% end %>
+<%= render partial: "task", locals:
+{
+  action_title: "Edit Task",
+  action_submit: "Update Task"
+} %>

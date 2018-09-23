@@ -1,0 +1,18 @@
+<%= action_title %>
+
+<%= form_with model: @task do |t| %>
+
+  <%= t.label :action %>
+  <%= t.text_field :action %>
+  <br>
+
+  <%= t.label :description %>
+  <%= t.text_area :description %>
+  <br>
+
+  <%= t.label :completion_date %>
+  <%= t.date_field :completion_date %>
+  <br>
+
+  <%= t.submit action_submit %>
+<% end %>
