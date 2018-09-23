@@ -1,7 +1,6 @@
 require 'date'
 
 class TasksController < ApplicationController
-  # TASKS = ["Water chia head", "Pet fuzzy rock", "Hug teddy", "Smell some flowers", "Paint the plates", "Pop water ballon"]
 
   def index
     @tasks = Task.all
@@ -21,12 +20,8 @@ class TasksController < ApplicationController
   end
 
   def create
-
     @task = Task.new(
-      action: params[:task][:action],
-      description: params[:task][:description],
-      completion_date: params[:task][:completion_date],
-      completed: false
+      task_params
     )
 
     if @task.save
@@ -34,7 +29,6 @@ class TasksController < ApplicationController
     else
       render :new
     end
-
   end
 
   def edit
@@ -60,6 +54,15 @@ class TasksController < ApplicationController
     task = Task.find_by(id: params[:id])
     task.destroy
     redirect_to root_path
+  end
+
+  private
+  def task_params
+    return params.require(:task).permit(
+      :action,
+      :description,
+      :completion_date
+    )
   end
 
 end
